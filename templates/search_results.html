@@ -1,0 +1,14 @@
+{% extends "search.html" %}
+
+{% block search %}
+
+    <ul>
+        {% for book in books %}
+            <li>
+              <a href="{{ url_for ('book' , isbn=book.isbn)}}">
+                ISBN: {{ book.isbn }}, Title: {{book.title}}, Author: {{book.author}}, Year: {{book.year}}
+              </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
